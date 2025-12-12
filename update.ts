@@ -8,6 +8,9 @@ const IP_RESOLVER_DOMAIN = "myip.ipeek.workers.dev";
 const IP_RESOLVER_PATH = "/";
 const REQUESTS_PER_BATCH = 250;
 
+const RETRY_ATTEMPTS = 2;
+const RETRY_DELAY_MS = 500;
+
 type ProxyJson = {
     ip: string;
     port: string;
@@ -150,11 +153,37 @@ async function makeRequest(
     });
 }
 
+// Helper to sleep
+function sleep(ms: number) {
+    return new Promise<void>(resolve => setTimeout(resolve, ms));
+}
+
 function cleanOrgName(org: string): string {
     return org
         .replace(/[,.\-_+\/\\|;:!@#$%^&*()[\]{}]/g, " ")
         .replace(/\s+/g, " ")
         .trim();
+}
+
+// A function that wraps makeRequest with retry logic
+async function makeRequestWithRetry(
+    host: string,
+    path: string,
+    proxy?: { host: string; port: number },
+    retries: number = RETRY_ATTEMPTS,
+    delayMs: number = RETRY_DELAY_MS
+): Promise<string> {
+    for (let attempt = 0; attempt <= retries; attempt++) {
+        try {
+            return await makeRequest(host, path, proxy);
+        } catch (err) {
+            if (attempt === retries) {
+                throw err;
+            }
+            await sleep(delayMs * (attempt + 1));
+        }
+    }
+    throw new Error("Unreachable code in makeRequestWithRetry");
 }
 
 (async () => {
@@ -169,10 +198,17 @@ function cleanOrgName(org: string): string {
 
         const requests: Promise<ProxyData | null>[] = batch.map(async (proxy): Promise<ProxyData | null> => {
             try {
-                const response = JSON.parse(await makeRequest(IP_RESOLVER_DOMAIN, IP_RESOLVER_PATH, {
-                    host: proxy.ip,
-                    port: Number(proxy.port)
-                })) as IpGeoData;
+                const responseStr = await makeRequestWithRetry(
+                    IP_RESOLVER_DOMAIN, 
+                    IP_RESOLVER_PATH, 
+                    {
+                        host: proxy.ip,
+                        port: Number(proxy.port)
+                    },
+                    RETRY_ATTEMPTS,
+                    RETRY_DELAY_MS
+                );
+                const response = JSON.parse(responseStr) as IpGeoData;
                 return {
                     ip: proxy.ip,
                     port: Number(proxy.port),
