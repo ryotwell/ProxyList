@@ -1,0 +1,224 @@
+[
+  {
+    "ip": "2.56.206.114",
+    "port": 8443,
+    "org": "Proitlab LLC",
+    "country": "Armenia"
+  },
+  {
+    "ip": "193.58.120.119",
+    "port": 443,
+    "org": "InterLIR Marketplace",
+    "country": "Armenia"
+  },
+  {
+    "ip": "213.159.76.202",
+    "port": 2053,
+    "org": "WorkTitans B V",
+    "country": "Armenia"
+  },
+  {
+    "ip": "91.132.132.237",
+    "port": 443,
+    "org": "WorkTitans B V",
+    "country": "Armenia"
+  },
+  {
+    "ip": "2.56.206.64",
+    "port": 443,
+    "org": "Proitlab LLC",
+    "country": "Armenia"
+  },
+  {
+    "ip": "2.56.207.235",
+    "port": 443,
+    "org": "Proitlab LLC",
+    "country": "Armenia"
+  },
+  {
+    "ip": "45.129.185.90",
+    "port": 443,
+    "org": "GLOBAL CONNECTIVITY SOLUTIONS LLP",
+    "country": "Armenia"
+  },
+  {
+    "ip": "213.159.76.202",
+    "port": 8443,
+    "org": "WorkTitans B V",
+    "country": "Armenia"
+  },
+  {
+    "ip": "194.156.103.103",
+    "port": 2096,
+    "org": "GLOBAL CONNECTIVITY SOLUTIONS LLP",
+    "country": "Armenia"
+  },
+  {
+    "ip": "139.45.214.122",
+    "port": 443,
+    "org": "RETN AM Limited Liability Company",
+    "country": "Armenia"
+  },
+  {
+    "ip": "85.90.207.254",
+    "port": 8443,
+    "org": "G Core Labs Customer assignment",
+    "country": "Armenia"
+  },
+  {
+    "ip": "139.45.214.126",
+    "port": 443,
+    "org": "RETN AM Limited Liability Company",
+    "country": "Armenia"
+  },
+  {
+    "ip": "87.121.47.32",
+    "port": 443,
+    "org": "GLOBAL CONNECTIVITY SOLUTIONS LLP",
+    "country": "Armenia"
+  },
+  {
+    "ip": "213.159.76.175",
+    "port": 443,
+    "org": "WorkTitans B V",
+    "country": "Armenia"
+  },
+  {
+    "ip": "194.156.103.44",
+    "port": 443,
+    "org": "GLOBAL CONNECTIVITY SOLUTIONS LLP",
+    "country": "Armenia"
+  },
+  {
+    "ip": "77.91.68.209",
+    "port": 443,
+    "org": "365 partners INC",
+    "country": "Armenia"
+  },
+  {
+    "ip": "194.156.103.67",
+    "port": 443,
+    "org": "GLOBAL CONNECTIVITY SOLUTIONS LLP",
+    "country": "Armenia"
+  },
+  {
+    "ip": "217.113.25.184",
+    "port": 44443,
+    "org": "I NET LLC",
+    "country": "Armenia"
+  },
+  {
+    "ip": "84.235.245.65",
+    "port": 2096,
+    "org": "Oracle Svenska AB",
+    "country": "United Arab Emirates"
+  },
+  {
+    "ip": "193.123.90.82",
+    "port": 12648,
+    "org": "Oracle Corporation",
+    "country": "United Arab Emirates"
+  },
+  {
+    "ip": "152.32.181.246",
+    "port": 44070,
+    "org": "UCLOUD INFORMATION TECHNOLOGY HK LIMITED",
+    "country": "United Arab Emirates"
+  },
+  {
+    "ip": "139.185.50.5",
+    "port": 14594,
+    "org": "Oracle Corporation",
+    "country": "United Arab Emirates"
+  },
+  {
+    "ip": "193.123.81.105",
+    "port": 443,
+    "org": "Oracle Corporation",
+    "country": "United Arab Emirates"
+  },
+  {
+    "ip": "84.235.245.18",
+    "port": 34501,
+    "org": "Oracle Svenska AB",
+    "country": "United Arab Emirates"
+  },
+  {
+    "ip": "20.157.74.92",
+    "port": 443,
+    "org": "Microsoft Corporation",
+    "country": "United Arab Emirates"
+  },
+  {
+    "ip": "90.156.221.54",
+    "port": 443,
+    "org": "ITGLOBAL COM DMCC",
+    "country": "United Arab Emirates"
+  },
+  {
+    "ip": "40.120.108.47",
+    "port": 2083,
+    "org": "Microsoft Corporation",
+    "country": "United Arab Emirates"
+  },
+  {
+    "ip": "3.29.240.49",
+    "port": 443,
+    "org": "Amazon Data Services UAE",
+    "country": "United Arab Emirates"
+  },
+  {
+    "ip": "176.97.67.38",
+    "port": 443,
+    "org": "3nt solutions LLP",
+    "country": "United Arab Emirates"
+  },
+  {
+    "ip": "85.237.211.59",
+    "port": 2053,
+    "org": "Private Customer",
+    "country": "United Arab Emirates"
+  },
+  {
+    "ip": "217.195.200.138",
+    "port": 443,
+    "org": "G Core Labs Customer assignment",
+    "country": "United Arab Emirates"
+  },
+  {
+    "ip": "85.237.211.59",
+    "port": 8443,
+    "org": "Private Customer",
+    "country": "United Arab Emirates"
+  },
+  {
+    "ip": "3.29.76.68",
+    "port": 443,
+    "org": "Amazon Data Services UAE",
+    "country": "United Arab Emirates"
+  },
+  {
+    "ip": "109.61.42.20",
+    "port": 443,
+    "org": "G Core Labs Customer assignment",
+    "country": "United Arab Emirates"
+  },
+  {
+    "ip": "141.145.151.219",
+    "port": 443,
+    "org": "Oracle Corporation",
+    "country": "United Arab Emirates"
+  },
+  {
+    "ip": "20.174.15.226",
+    "port": 443,
+    "org": "Microsoft Corporation",
+    "country": "United Arab Emirates"
+  },
+  {
+    "ip": "159.100.198.106",
+    "port": 443,
+    "org": "Aryaka Networks Inc c o Equinix SV4 255 Caspian Drive Sunnyvale CA 94089 United States",
+    "country": "United States"
+  }
+]

@@ -1,0 +1,61 @@
+# Nama workflow yang akan tampil di tab "Actions" GitHub
+name: 🤖 Auto Update Proxy List
+
+on:
+  # 1. Pemicu Manual: Tambahkan tombol "Run workflow" di tab Actions
+  workflow_dispatch:
+
+  # 2. Pemicu Terjadwal: Menggunakan cron syntax
+  #    Contoh ini berjalan setiap 6 jam (00:00, 06:00, 12:00, 18:00 UTC)
+  schedule:
+    - cron: '0 */6 * * *'
+
+jobs:
+  update-proxy-list:
+    runs-on: ubuntu-latest # Menggunakan runner Linux terbaru
+
+    # ❗ PENTING: Berikan izin 'write' agar workflow bisa melakukan commit & push
+    permissions:
+      contents: write
+
+    steps:
+      - name: 1. Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: 2. Setup Bun
+        uses: oven-sh/setup-bun@v1
+       
+      - name: Ensure package.json exists
+        run: |
+          if [ ! -f package.json ]; then
+            bun init -y
+          fi
+
+      - name: 3. Run Proxy Update Script
+        run: bun run helper/update3.ts
+
+      # Langkah 4: Konfigurasi Git untuk Bot
+      - name: 4. Configure Git
+        run: |
+          git config --global user.name 'GitHub Actions Bot'
+          git config --global user.email 'github-actions-bot@users.noreply.github.com'
+
+      - name: 5. Commit Updated Files
+        run: |
+          # Tambahkan semua file yang berubah (atau file spesifik)
+          git add .
+          
+          # Cek apakah ada perubahan yang akan di-commit
+          # Jika tidak ada perubahan, skrip akan keluar dengan sukses
+          if ! git diff --cached --quiet; then
+            echo "Perubahan terdeteksi. Melakukan commit..."
+            git commit -m "🤖 Auto update: Active proxy list [skip ci]"
+          else
+            echo "Tidak ada perubahan, commit dilewati."
+          fi
+
+      - name: 6. Pull Remote Changes (Rebase)
+        run: git pull origin main --rebase
+
+      - name: 7. Push Changes to Remote
+        run: git push origin main

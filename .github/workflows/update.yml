@@ -1,0 +1,52 @@
+name: 🤖 Auto Update Proxy List
+
+on:
+  workflow_dispatch:
+
+jobs:
+  update-proxy-list:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: 1. Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: 2. Setup Bun
+        uses: oven-sh/setup-bun@v1
+
+      - name: Ensure package.json exists
+        run: |
+          if [ ! -f package.json ]; then
+            bun init -y
+          fi
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: 3. Run Proxy Update Script
+        run: bun run update.ts
+
+      - name: 4. Configure Git
+        run: |
+          git config --global user.name 'GitHub Actions Bot'
+          git config --global user.email 'github-actions-bot@users.noreply.github.com'
+
+      - name: 5. Commit Updated Files
+        run: |
+          git add .
+          
+          if ! git diff --cached --quiet; then
+            echo "Changes detected. Committing..."
+            git commit -m "🤖 Auto update: Active proxy list [skip ci]"
+          else
+            echo "No changes detected, skipping commit."
+          fi
+
+      - name: 6. Pull Remote Changes (Rebase)
+        run: git pull origin main --rebase
+
+      - name: 7. Push Changes to Remote
+        run: git push origin main
