@@ -84,12 +84,6 @@
     "country": "Armenia"
   },
   {
-    "ip": "194.156.103.44",
-    "port": 443,
-    "org": "GLOBAL CONNECTIVITY SOLUTIONS LLP",
-    "country": "Armenia"
-  },
-  {
     "ip": "77.91.68.209",
     "port": 443,
     "org": "365 partners INC",
@@ -150,12 +144,6 @@
     "country": "United Arab Emirates"
   },
   {
-    "ip": "90.156.221.54",
-    "port": 443,
-    "org": "ITGLOBAL COM DMCC",
-    "country": "United Arab Emirates"
-  },
-  {
     "ip": "40.120.108.47",
     "port": 2083,
     "org": "Microsoft Corporation",
@@ -174,21 +162,9 @@
     "country": "United Arab Emirates"
   },
   {
-    "ip": "85.237.211.59",
-    "port": 2053,
-    "org": "Private Customer",
-    "country": "United Arab Emirates"
-  },
-  {
-    "ip": "217.195.200.138",
+    "ip": "176.97.66.175",
     "port": 443,
-    "org": "G Core Labs Customer assignment",
-    "country": "United Arab Emirates"
-  },
-  {
-    "ip": "85.237.211.59",
-    "port": 8443,
-    "org": "Private Customer",
+    "org": "3nt solutions LLP",
     "country": "United Arab Emirates"
   },
   {
@@ -201,12 +177,6 @@
     "ip": "109.61.42.20",
     "port": 443,
     "org": "G Core Labs Customer assignment",
-    "country": "United Arab Emirates"
-  },
-  {
-    "ip": "141.145.151.219",
-    "port": 443,
-    "org": "Oracle Corporation",
     "country": "United Arab Emirates"
   },
   {
