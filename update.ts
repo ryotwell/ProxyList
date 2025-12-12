@@ -18,6 +18,7 @@ type ProxyJson = {
 type ProxyData = {
     ip: string;
     port: number;
+    country_code: string;
     country: string;
     org: string;
 };
@@ -176,6 +177,7 @@ function cleanOrgName(org: string): string {
                     ip: proxy.ip,
                     port: Number(proxy.port),
                     org: cleanOrgName(response.asOrganization),
+                    country_code: response.country,
                     country: getCountryNameById(response.country),
                 }
             } catch (err) {
