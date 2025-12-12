@@ -196,7 +196,7 @@ function cleanOrgName(org: string): string {
         return 0;
     });
 
-    await fs.writeFile('filteredResults.json', JSON.stringify(filteredResults, null, 2), 'utf-8');
+    await fs.writeFile('filteredResults.json', JSON.stringify(filteredResults), 'utf-8');
     console.log("Filtered results saved to filteredResults.json");
 
 })()
