@@ -2,7 +2,7 @@ import tls from "tls";
 import fs from 'fs/promises'
 import { getCountryNameById } from "./country";
 
-const RAW_PROXY_FILE = "./rawProxyList2.txt";
+const RAW_PROXY_FILE = "./rawProxyList.txt";
 const SOCKET_TIMEOUT = 3000;
 const IP_RESOLVER_DOMAIN = "myip.ipeek.workers.dev";
 const IP_RESOLVER_PATH = "/";
